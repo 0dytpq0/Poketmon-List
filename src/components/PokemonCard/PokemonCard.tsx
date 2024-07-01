@@ -1,14 +1,14 @@
 type CardProps = {
   name: string;
-  poketmonNum: number;
-  poketmonImg: string;
+  pokemonNum: number;
+  pokemonImg: string;
   // onClickFn: React.MouseEventHandler<HTMLDivElement>;
 };
 
-function PoketmonCard({
+function PokemonCard({
   name,
-  poketmonNum,
-  poketmonImg,
+  pokemonNum: pokemonNum,
+  pokemonImg: pokemonImg,
 }: // onClickFn: handleCardClick,
 CardProps) {
   return (
@@ -19,12 +19,12 @@ CardProps) {
       // onClick={handleCardClick}
     >
       <div className="relative flex items-center justify-center w-full h-1/2">
-        <img className="w-20 h-auto mb-4 aspect-auto" src={poketmonImg} />
+        <img className="w-20 h-auto mb-4 aspect-auto" src={pokemonImg} />
       </div>
       <h1 className="mb-2 text-xl font-semibold">{name}</h1>
-      <p>도감번호 : {poketmonNum}</p>
+      <p>도감번호 : {pokemonNum}</p>
     </div>
   );
 }
 
-export default PoketmonCard;
+export default PokemonCard;

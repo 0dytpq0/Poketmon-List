@@ -1,14 +1,14 @@
 import axios, { AxiosInstance } from "axios";
-import Poketmon from "./poketmon";
+import Pokemon from "./pokemon";
 
 class API {
   private axios: AxiosInstance;
 
-  poketmon;
+  pokemon;
 
   constructor() {
     this.axios = axios.create({ baseURL: "http://localhost:3000" });
-    this.poketmon = new Poketmon(this.axios);
+    this.pokemon = new Pokemon(this.axios);
   }
 }
 

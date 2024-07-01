@@ -4,8 +4,8 @@ import { PropsWithChildren } from "react";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Poketmon",
-  description: "Show Poketmon List",
+  title: "Pokemon",
+  description: "Show Pokemon List",
 };
 
 function RootLayout({ children }: PropsWithChildren) {
