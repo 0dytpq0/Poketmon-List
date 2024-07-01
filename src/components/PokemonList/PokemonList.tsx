@@ -1,28 +1,27 @@
 "use client";
-import getPokemon from "@/containers/getPokemon";
+import { usePokemons } from "@/services/usePokemon.service";
 import { PokemonsType } from "@/types/pokemonType";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import PokemonCard from "../PokemonCard";
 
 function PokemonList() {
-  const [pokemon, setPokemon] = useState<PokemonsType[]>([]);
+  const { data: pokemons } = usePokemons();
 
-  useEffect(() => {
-    const getPokemonData = async () => {
-      const newPokemon = await getPokemon();
-      setPokemon(newPokemon);
-    };
-    getPokemonData();
-  }, []);
-  console.log("pokemons", pokemon);
+  console.log("pokemons", pokemons);
 
   return (
     <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-      <PokemonCard name="이상해씨" pokemonImg="src" pokemonNum={5} />
-      <PokemonCard name="이상해씨" pokemonImg="src" pokemonNum={5} />
-      <PokemonCard name="이상해씨" pokemonImg="src" pokemonNum={5} />
-      <PokemonCard name="이상해씨" pokemonImg="src" pokemonNum={5} />
-      <PokemonCard name="이상해씨" pokemonImg="src" pokemonNum={5} />
+      {pokemons?.map((pokemon: PokemonsType) => {
+        return (
+          <Link key={pokemon.id} href={`/${pokemon.id}`}>
+            <PokemonCard
+              name={pokemon.korean_name}
+              pokemonImg={pokemon.sprites.front_default}
+              pokemonNum={pokemon.id}
+            />
+          </Link>
+        );
+      })}
     </div>
   );
 }
