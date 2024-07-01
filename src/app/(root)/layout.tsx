@@ -1,19 +1,20 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import Header from "@/components/Header";
+import { Metadata } from "next";
+import { PropsWithChildren } from "react";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Poketmon",
   description: "Show Poketmon List",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <div>
+      <Header />
+      {children}
+    </div>
   );
 }
+
+export default RootLayout;
