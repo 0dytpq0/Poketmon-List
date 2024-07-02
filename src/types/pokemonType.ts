@@ -1,4 +1,5 @@
 interface NameUrl {
+  korean_name: string;
   name: string;
   url: string;
 }
@@ -156,6 +157,7 @@ interface Stat {
 interface Type {
   slot: number;
   type: {
+    korean_name: string;
     name: string;
     url: string;
   };

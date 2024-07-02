@@ -1,11 +1,11 @@
 import PokemonDetailSection from "@/components/pokemonDetailSection";
 
-function page() {
+function PokemonDetailPage() {
   return (
-    <div>
+    <main>
       <PokemonDetailSection />
-    </div>
+    </main>
   );
 }
 
-export default page;
+export default PokemonDetailPage;
