@@ -7,8 +7,6 @@ import PokemonCard from "../PokemonCard";
 function PokemonList() {
   const { data: pokemons } = usePokemons();
 
-  console.log("pokemons", pokemons);
-
   return (
     <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
       {pokemons?.map((pokemon: PokemonsType) => {

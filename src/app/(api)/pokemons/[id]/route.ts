@@ -8,6 +8,7 @@ export const GET = async (
   const { id } = params;
 
   try {
+    console.log("id", id);
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const speciesResponse = await axios.get(
       `https://pokeapi.co/api/v2/pokemon-species/${id}`

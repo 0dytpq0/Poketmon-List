@@ -15,9 +15,8 @@ class Pokemon {
     const data = res.data;
     return data;
   }
-  async getPokemon(pokemonId: number) {
-    const path = `/pokemons/${pokemonId}`;
-
+  async getPokemon(id: number) {
+    const path = `/pokemons/${id}`;
     const res = await this.axios.get<PokemonType>(path);
     const data = res.data;
 
